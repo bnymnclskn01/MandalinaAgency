@@ -1,0 +1,2 @@
+﻿@model IEnumerable<Mandalina.Entities.ConstantValues>
+@Html.Raw(Model.FirstOrDefault(x => x.Key == "WorkPortfolioTextPage").Value)

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Mandalina.Entities.Service>
+@foreach (var item in Model)
+{
+    <div class="work-item h-50-v @item.CategoryId v-dark-head">
+        <div class="metas p-30">
+            <span> @item.Category.Name </span>
+        </div>
+
+        <div class="img-next-box before-z-index p-absolute left-0 top-0 w-100 h-100 over-hidden data-overlay "
+             data-overlay="4">
+            @if (item.ImageUrl.EndsWith(".PNG") || item.ImageUrl.EndsWith(".JPG") || item.ImageUrl.EndsWith(".JPEG") || item.ImageUrl.EndsWith(".GIF") || item.ImageUrl.EndsWith(".TIFF") || item.ImageUrl.EndsWith(".jpg") || item.ImageUrl.EndsWith(".png") || item.ImageUrl.EndsWith(".jpeg") || item.ImageUrl.EndsWith(".tiff") || item.ImageUrl.EndsWith(".gif"))
+            {
+                <img class="cover-bg-img"
+                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                     data-dsn-src="/Images/Service/@item.ImageUrl" alt="">
+            }
+            else if (item.ImageUrl.EndsWith(".avi") || item.ImageUrl.EndsWith(".AVI") || item.ImageUrl.EndsWith(".mp4") || item.ImageUrl.EndsWith(".MP4") || item.ImageUrl.EndsWith(".mov") || item.ImageUrl.EndsWith(".MOV") || item.ImageUrl.EndsWith(".flv") || item.ImageUrl.EndsWith(".FLV") || item.ImageUrl.EndsWith(".mpg") || item.ImageUrl.EndsWith(".MPG"))
+            {
+                <video class="cover-bg-img" loop autoplay muted controls>
+                    <source src="~/Images/Service/@item.ImageUrl" type="video/mp4">
+                </video>
+            }
+
+        </div>
+        <div class="item-info p-absolute bottom-0 p-30">
+            <a href="/portfolyo/@item.Slug" class="w-100" data-dsn-ajax="work">
+                <div class="text">
+
+                    <h4 class="title-block sec-title">
+                        @item.serviceTitle <br />
+                        @item.serviceTitle2
+                    </h4>
+
+                    <p class="mt-5"  >
+                         @item.serviceCompany
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+}

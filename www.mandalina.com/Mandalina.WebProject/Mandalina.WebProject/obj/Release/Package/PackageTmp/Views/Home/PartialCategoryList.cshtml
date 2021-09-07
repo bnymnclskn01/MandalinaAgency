@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Mandalina.Entities.Categories>
+@foreach (var item in Model)
+{
+    <button class="color-white d-inline-block" type="button"
+            data-filter=".@item.Id">
+        @item.Name
+    </button>
+}

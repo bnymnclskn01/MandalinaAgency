@@ -1,0 +1,24 @@
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\Mandalina.Core.dll.config
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\Mandalina.Core.dll
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\Mandalina.Core.pdb
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\EntityFramework.dll
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\EntityFramework.xml
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.csproj.CoreCompileInputs.cache
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.csproj.CopyComplete
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.dll
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.pdb
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\Mandalina.Core.dll.config
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\Mandalina.Core.dll
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\Mandalina.Core.pdb
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\EntityFramework.dll
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\EntityFramework.xml
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.csproj.CopyComplete
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.dll
+C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.Core\obj\Release\Mandalina.Core.pdb

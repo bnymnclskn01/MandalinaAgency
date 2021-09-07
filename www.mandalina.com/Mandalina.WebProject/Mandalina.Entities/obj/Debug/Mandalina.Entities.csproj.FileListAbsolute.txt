@@ -1,0 +1,12 @@
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\bin\Debug\Mandalina.Entities.dll
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\bin\Debug\Mandalina.Entities.pdb
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\obj\Debug\Mandalina.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\obj\Debug\Mandalina.Entities.dll
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\obj\Debug\Mandalina.Entities.pdb
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\bin\Debug\Mandalina.Entities.dll.config
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\bin\Debug\EntityFramework.dll
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\bin\Debug\EntityFramework.xml
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\obj\Debug\Mandalina.Entities.csproj.CopyComplete
+C:\Users\Meka Softech\Desktop\www.mandalina.com\Mandalina.WebProject\Mandalina.Entities\obj\Debug\Mandalina.Entities.csprojAssemblyReference.cache

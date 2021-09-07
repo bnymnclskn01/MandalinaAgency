@@ -1,0 +1,117 @@
+﻿@model Mandalina.Entities.Member
+
+@{
+    ViewBag.Title = "Yeni Kullanıcı Ekle";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="row">
+        <section class="panel">
+            <header class="panel-heading bg-danger">
+                <div class="panel-actions">
+                    <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                    <a href="#" style="color:white;" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title" style="color:white;">Hata Mesajı</h2>
+            </header>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <p>@ViewBag.ErrorMessage</p>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <div class="panel-actions">
+                    <a href="#" class="fa fa-caret-down"></a>
+                    <a href="#" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title">Yeni Kullanıcı Ekle</h2>
+            </header>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Adı</label>
+                            <div class="col-md-10">
+                                <input type="text" name="Name" class="form-control" required placeholder="Lütfen Adınızı Giriniz" maxlength="50" />
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Soyadı</label>
+                            <div class="col-md-10">
+                                <input type="text" name="Surname" class="form-control" required placeholder="Lütfen Soyadınızı Giriniz" maxlength="50" />
+                                @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Kullanıcı Adı</label>
+                            <div class="col-md-10">
+                                <input type="text" name="UserName" class="form-control" required placeholder="Lütfen Soyadınızı Giriniz" maxlength="50" />
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Şifre</label>
+                            <div class="col-md-10">
+                                <input type="text" name="Password" class="form-control" required placeholder="Şifre Giriniz" maxlength="18" />
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Şifre Tekrar</label>
+                            <div class="col-md-10">
+                                <input type="text" name="RePassword" class="form-control" required placeholder="Şifre Tekrar Giriniz" maxlength="18" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Rol ID</label>
+                            <div class="col-md-10">
+                                <input type="text" name="RoleId" class="form-control" required readonly value="1" />
+                                @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Aktif | Pasif</label>
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    <select class="form-control mb-md" required name="IsActiveted">
+                                        <option value="True">Aktif</option>
+                                        <option value="False">Pasif</option>
+                                    </select>
+                                    @Html.ValidationMessageFor(model => model.IsActiveted, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Yeni Kullanıcı Ekle</button>
+                                <a href="@Url.Action("Index","UserMembers")" class="btn btn-dark"><i class="fa fa-reply-all"></i> Listeye Geri Dön</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+
+    </div>
+</div>

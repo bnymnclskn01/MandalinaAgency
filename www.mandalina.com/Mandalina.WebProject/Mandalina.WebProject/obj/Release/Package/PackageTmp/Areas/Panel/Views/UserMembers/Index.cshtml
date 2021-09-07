@@ -1,0 +1,52 @@
+﻿@model List<Mandalina.Entities.Member>
+@{
+    ViewBag.Title = "Kullanıcı Listele";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <section class="panel">
+        <header class="panel-heading bg-tertiary">
+            <div class="panel-actions">
+                <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                <a href="#" style="color:white;" class="fa fa-times"></a>
+            </div>
+
+            <h2 class="panel-title" style="color:white;">Kullanıcı Listele</h2>
+        </header>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+                <thead>
+                    <tr>
+                        <th>Adı Soyadı</th>
+                        <th>Kullanıcı Adı</th>
+                        <th>Şifre</th>
+                        <th>Aktif Durumu</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="gradeX">
+                            <td>@item.Name @item.Surname</td>
+                            <td>@item.UserName</td>
+                            <td>********</td>
+                            @if (item.IsActiveted == true)
+                            {
+                                <td><i class="fa fa-check"></i> Aktif</td>
+                            }
+                            else
+                            {
+                                <td><i class="fa fa-trash-o"></i> Pasif</td>
+                            }
+                            <td>
+                                <a href="/Panel/UserMembers/Edit/@item.Id" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+                                <a href="/Panel/UserMembers/Delete/@item.Id" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

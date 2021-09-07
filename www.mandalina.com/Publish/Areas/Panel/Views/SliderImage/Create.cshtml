@@ -1,0 +1,90 @@
+﻿@model Mandalina.Entities.SliderImage
+
+@{
+    ViewBag.Title = "Yeni Slider Resim Ekle";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <div class="panel-actions">
+                    <a href="#" class="fa fa-caret-down"></a>
+                    <a href="#" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title">Yeni Slider Resim Ekle</h2>
+            </header>
+            <div class="panel-body">
+                @using (Html.BeginForm("Create", "SliderImage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Ana Slider</label>
+                            <div class="col-md-10">
+                                @Html.DropDownList("SliderId", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.SliderId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Slider Adı</label>
+                            <div class="col-md-10">
+                                <input type="text" name="Name" required placeholder="Alt Adı Giriniz..." maxlength="110" class="form-control" />
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Slider Etiket</label>
+                            <div class="col-md-10">
+                                <input type="text" name="Alt" required placeholder="Alt Etiketi Giriniz..." maxlength="110" class="form-control" />
+                                @Html.ValidationMessageFor(model => model.Alt, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Slider Resim</label>
+                            <div class="col-md-10">
+                                <input type="file" name="ImageUrl" class="form-control" required />
+                                @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Slider Sıra</label>
+                            <div class="col-md-10">
+                                <input type="number" name="Rank" required placeholder="Sıra Numarası Giriniz" class="form-control" />
+                                @Html.ValidationMessageFor(model => model.Rank, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Aktif | Pasif</label>
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    <select class="form-control mb-md" required name="IsActivited">
+                                        <option value="True">Aktif</option>
+                                        <option value="False">Pasif</option>
+                                    </select>
+                                    @Html.ValidationMessageFor(model => model.IsActivited, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Yeni Slider Resim Ekle</button>
+                                <a href="@Url.Action("Index","SliderImage")" class="btn btn-dark"><i class="fa fa-reply-all"></i> Listeye Geri Dön</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+
+    </div>
+</div>

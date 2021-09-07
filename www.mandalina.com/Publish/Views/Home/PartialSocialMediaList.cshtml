@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Mandalina.Entities.SocialMedias>
+@foreach (var item in Model)
+{
+    <li class="d-inline-block over-hidden">
+        <a class="link-hover" data-dsn="parallax"
+           href="@item.Link" data-hover-text="Contact" target="_blank">@item.Name</a>
+    </li>
+}

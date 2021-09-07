@@ -1,0 +1,346 @@
+﻿@model Mandalina.Entities.Service
+@{
+    <title>@Html.Raw(ViewBag.Title)</title>
+    <meta name="description" content="@Html.Raw(ViewBag.Description)" />
+    <meta name="keywords" content="@Html.Raw(ViewBag.Keyword)" />
+}
+<header class="header-project p-relative h-100-v over-hidden dsn-header-parallax v-dark-head">
+
+    <div data-dsn-ajax="img"
+         class="p-absolute dsn-hero-parallax-img transform-3d w-100 h-100 bg-container over-hidden "
+         data-overlay="4">
+        @if (Model.ImageUrl.EndsWith(".PNG") || Model.ImageUrl.EndsWith(".JPG") || Model.ImageUrl.EndsWith(".JPEG") || Model.ImageUrl.EndsWith(".GIF") || Model.ImageUrl.EndsWith(".TIFF") || Model.ImageUrl.EndsWith(".jpg") || Model.ImageUrl.EndsWith(".png") || Model.ImageUrl.EndsWith(".jpeg") || Model.ImageUrl.EndsWith(".tiff") || Model.ImageUrl.EndsWith(".gif"))
+        {
+            <img class="cover-bg-img"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 data-dsn-src="/Images/Service/@Model.ImageUrl"
+                 data-dsn-srcset="/Images/Service/@Model.ImageUrl"
+                 alt="@Model.serviceTitle">
+        }
+        else if (Model.ImageUrl.EndsWith(".avi") || Model.ImageUrl.EndsWith(".AVI") || Model.ImageUrl.EndsWith(".mp4") || Model.ImageUrl.EndsWith(".MP4") || Model.ImageUrl.EndsWith(".mov") || Model.ImageUrl.EndsWith(".MOV") || Model.ImageUrl.EndsWith(".flv") || Model.ImageUrl.EndsWith(".FLV") || Model.ImageUrl.EndsWith(".mpg") || Model.ImageUrl.EndsWith(".MPG"))
+        {
+            <video class="cover-bg-img" muted loop controls autoplay>
+                <source src="~/Images/Service/@Model.ImageUrl" type="video/mp4">
+            </video>
+        }
+    </div>
+    <div class="dsn-container h-100 p-relative ">
+
+        <div class="d-flex align-items-center text-center justify-content-center w-100 h-100 p-relative dsn-z-index-2">
+            <div class="intro-project dsn-hero-parallax-title" data-dsn-scale="1">
+                <div class="intro-title w-100 m-10">
+                    <h1 class="title p-relative  text-uppercase" title="@Model.serviceContent2" data-dsn-ajax="title">@Model.serviceContent2</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            @if (Model.serviceContent3 == null && Model.serviceContent4 == null)
+            {
+                <div class="col-md-12 pt-20">
+                    <div class="card">
+                        <div class="card-body">
+                            @Html.Raw(Model.serviceContent)
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (Model.serviceContent3 != null && Model.serviceContent4 == null)
+            {
+                <div class="col-md-6 pt-20">
+                    <div class="card">
+                        <div class="card-body">
+                            @Html.Raw(Model.serviceContent)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 pt-20">
+                    <div class="card">
+                        <div class="card-body">
+                            @Html.Raw(Model.serviceContent3)
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (Model.serviceContent4 != null && Model.serviceContent3 != null)
+            {
+                <div class="col-md-4 pt-20">
+                    <div class="card">
+                        <div class="card-body">
+                            @Html.Raw(Model.serviceContent)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 pt-20">
+                    <div class="card">
+                        <div class="card-body">
+                            @Html.Raw(Model.serviceContent3)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 pt-20">
+                    <div class="card">
+                        <div class="card-body">
+                            @Html.Raw(Model.serviceContent4)
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    @foreach (var item in Model.Work.Where(x => x.ServiceId == Model.Id).ToList())
+    {
+        if (item.OneImage == true && item.TextIsActive == true)
+        {
+            foreach (var item2 in item.WorkImages)
+            {
+
+                <div class="container-fluid p-relative section-margin">
+                    <div class="img-box-small dsn-parallax-full parallax-responsive" data-dsn-grid="move-up">
+                        @if (item2.ImageUrl.EndsWith(".PNG") || item2.ImageUrl.EndsWith(".JPG") || item2.ImageUrl.EndsWith(".JPEG") || item2.ImageUrl.EndsWith(".GIF") || item2.ImageUrl.EndsWith(".TIFF") || item2.ImageUrl.EndsWith(".jpg") || item2.ImageUrl.EndsWith(".png") || item2.ImageUrl.EndsWith(".jpeg") || item2.ImageUrl.EndsWith(".tiff") || item2.ImageUrl.EndsWith(".gif"))
+                        {
+                            <img src="/Images/Service/@item2.ImageUrl" alt="@item.Name " class="has-opposite-direction">
+                            <div class="cap">
+                                <span>@item.Name</span>
+                            </div>
+                        }
+                        else if (item2.ImageUrl.EndsWith(".avi") || item2.ImageUrl.EndsWith(".AVI") || item2.ImageUrl.EndsWith(".mp4") || item2.ImageUrl.EndsWith(".MP4") || item2.ImageUrl.EndsWith(".mov") || item2.ImageUrl.EndsWith(".MOV") || item2.ImageUrl.EndsWith(".flv") || item2.ImageUrl.EndsWith(".FLV") || item2.ImageUrl.EndsWith(".mpg") || item2.ImageUrl.EndsWith(".MPG"))
+                        {
+                            <video class="has-opposite-direction" width="100%" muted loop controls autoplay>
+                                <source src="~/Images/Service/@item2.ImageUrl" type="video/mp4">
+                            </video>
+                        }
+                    </div>
+                </div>
+            }
+            <div class="container">
+                <div class="row">
+                    <div class="section-p section-padding p-relative background-section">
+                        <div class="intro-text text-center p-relative">
+                            <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.06"
+                                 data-dsn-duration="170%" data-dsn-move="0%">
+                                @Model.serviceTitle
+                            </div>
+                            <div class="inner" data-dsn-animate="section">
+                                @Html.Raw(item.Content)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (item.OneImage == true && item.TextIsActive == false)
+        {
+            foreach (var item2 in item.WorkImages)
+            {
+                <div class="container-fluid p-relative section-margin">
+                    <div class="img-box-small dsn-parallax-full parallax-responsive" data-dsn-grid="move-up">
+                        @if (item2.ImageUrl.EndsWith(".PNG") || item2.ImageUrl.EndsWith(".JPG") || item2.ImageUrl.EndsWith(".JPEG") || item2.ImageUrl.EndsWith(".GIF") || item2.ImageUrl.EndsWith(".TIFF") || item2.ImageUrl.EndsWith(".jpg") || item2.ImageUrl.EndsWith(".png") || item2.ImageUrl.EndsWith(".jpeg") || item2.ImageUrl.EndsWith(".tiff") || item2.ImageUrl.EndsWith(".gif"))
+                        {
+                            <img src="/Images/Service/@item2.ImageUrl" alt="@item.Name " class="has-opposite-direction">
+                            <div class="cap">
+                                <span>@item.Name</span>
+                            </div>
+                        }
+                        else if (item2.ImageUrl.EndsWith(".avi") || item2.ImageUrl.EndsWith(".AVI") || item2.ImageUrl.EndsWith(".mp4") || item2.ImageUrl.EndsWith(".MP4") || item2.ImageUrl.EndsWith(".mov") || item2.ImageUrl.EndsWith(".MOV") || item2.ImageUrl.EndsWith(".flv") || item2.ImageUrl.EndsWith(".FLV") || item2.ImageUrl.EndsWith(".mpg") || item2.ImageUrl.EndsWith(".MPG"))
+                        {
+                            <video class="has-opposite-direction" width="100%" muted loop controls autoplay>
+                                <source src="~/Images/Service/@item2.ImageUrl" type="video/mp4">
+                            </video>
+                        }
+                    </div>
+                </div>
+            }
+        }
+        else if (item.TwoImage == true && item.TextIsActive == true)
+        {
+            <div class=" colection-image has-popup over-hidden background-theme section-padding">
+                <div class="container">
+                    <div class="project-image-collage over-hidden">
+                        @foreach (var item2 in item.WorkImages)
+                        {
+                            if (item2.ImageUrl.EndsWith(".PNG") || item2.ImageUrl.EndsWith(".JPG") || item2.ImageUrl.EndsWith(".JPEG") || item2.ImageUrl.EndsWith(".GIF") || item2.ImageUrl.EndsWith(".TIFF") || item2.ImageUrl.EndsWith(".jpg") || item2.ImageUrl.EndsWith(".png") || item2.ImageUrl.EndsWith(".jpeg") || item2.ImageUrl.EndsWith(".tiff") || item2.ImageUrl.EndsWith(".gif"))
+                            {
+                                <a href="~/Images/Service/@item2.ImageUrl" class="p-relative over-hidden d-flex">
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                         data-dsn-src="/Images/Service/@item2.ImageUrl"
+                                         data-dsn-srcset="/Images/Service/@item2.ImageUrl 1800w"
+                                         alt="@item.Name" class="cover-bg-img">
+                                </a>
+                            }
+                            else if (item2.ImageUrl.EndsWith(".avi") || item2.ImageUrl.EndsWith(".AVI") || item2.ImageUrl.EndsWith(".mp4") || item2.ImageUrl.EndsWith(".MP4") || item2.ImageUrl.EndsWith(".mov") || item2.ImageUrl.EndsWith(".MOV") || item2.ImageUrl.EndsWith(".flv") || item2.ImageUrl.EndsWith(".FLV") || item2.ImageUrl.EndsWith(".mpg") || item2.ImageUrl.EndsWith(".MPG"))
+                            {
+                                <video class="cover-bg-img p-relative over-hidden d-flex" muted loop controls autoplay width="100%" height="100%">
+                                    <source src="~/Images/Service/@item2.ImageUrl" type="video/mp4">
+                                </video>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="section-p section-padding p-relative background-section">
+                <div class="intro-text text-center p-relative">
+                    <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.06"
+                         data-dsn-duration="170%" data-dsn-move="0%">
+                        @Model.serviceTitle
+                    </div>
+                    <div class="inner" data-dsn-animate="section">
+                        <h2 class="dsn-text">
+                            @Html.Raw(item.Content)
+                        </h2>
+
+                        <p class="caption-p dsn-up">Mandalina Agency</p>
+                    </div>
+                </div>
+            </div>
+
+        }
+        else if (item.TwoImage == true && item.TextIsActive == false)
+        {
+            <div class=" colection-image has-popup over-hidden background-theme section-padding">
+                <div class="container">
+                    <div class="project-image-collage over-hidden">
+                        @foreach (var item2 in item.WorkImages)
+                        {
+                            if (item2.ImageUrl.EndsWith(".PNG") || item2.ImageUrl.EndsWith(".JPG") || item2.ImageUrl.EndsWith(".JPEG") || item2.ImageUrl.EndsWith(".GIF") || item2.ImageUrl.EndsWith(".TIFF") || item2.ImageUrl.EndsWith(".jpg") || item2.ImageUrl.EndsWith(".png") || item2.ImageUrl.EndsWith(".jpeg") || item2.ImageUrl.EndsWith(".tiff") || item2.ImageUrl.EndsWith(".gif"))
+                            {
+                                <a href="~/Images/Service/@item2.ImageUrl" class="p-relative over-hidden d-flex">
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                         data-dsn-src="/Images/Service/@item2.ImageUrl"
+                                         data-dsn-srcset="/Images/Service/@item2.ImageUrl 1800w"
+                                         alt="@item.Name" class="cover-bg-img">
+                                </a>
+                            }
+                            else if (item2.ImageUrl.EndsWith(".avi") || item2.ImageUrl.EndsWith(".AVI") || item2.ImageUrl.EndsWith(".mp4") || item2.ImageUrl.EndsWith(".MP4") || item2.ImageUrl.EndsWith(".mov") || item2.ImageUrl.EndsWith(".MOV") || item2.ImageUrl.EndsWith(".flv") || item2.ImageUrl.EndsWith(".FLV") || item2.ImageUrl.EndsWith(".mpg") || item2.ImageUrl.EndsWith(".MPG"))
+                            {
+                                <video class="cover-bg-img p-relative over-hidden d-flex" muted loop controls autoplay width="100%" height="100%">
+                                    <source src="~/Images/Service/@item2.ImageUrl" type="video/mp4">
+                                </video>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        else if (item.ThreeImage == true && item.TextIsActive == true)
+        {
+            <div class=" colection-image mt-section has-popup over-hidden p-relative">
+                <div class="p-absolute half-bg-botto h-50 w-100"></div>
+                <div class="container">
+                    <div class="project-image-collage project-collage-three-col over-hidden">
+                        @foreach (var item2 in item.WorkImages)
+                        {
+                            if (item2.ImageUrl.EndsWith(".PNG") || item2.ImageUrl.EndsWith(".JPG") || item2.ImageUrl.EndsWith(".JPEG") || item2.ImageUrl.EndsWith(".GIF") || item2.ImageUrl.EndsWith(".TIFF") || item2.ImageUrl.EndsWith(".jpg") || item2.ImageUrl.EndsWith(".png") || item2.ImageUrl.EndsWith(".jpeg") || item2.ImageUrl.EndsWith(".tiff") || item2.ImageUrl.EndsWith(".gif"))
+                            {
+                                <a href="~/Images/Service/@item2.ImageUrl" class="p-relative over-hidden d-flex">
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                         data-dsn-src="/Images/Service/@item2.ImageUrl"
+                                         data-dsn-srcset="/Images/Service/@item2.ImageUrl 1800w"
+                                         alt="@item.Name" class="cover-bg-img">
+                                </a>
+                            }
+                            else if (item2.ImageUrl.EndsWith(".avi") || item2.ImageUrl.EndsWith(".AVI") || item2.ImageUrl.EndsWith(".mp4") || item2.ImageUrl.EndsWith(".MP4") || item2.ImageUrl.EndsWith(".mov") || item2.ImageUrl.EndsWith(".MOV") || item2.ImageUrl.EndsWith(".flv") || item2.ImageUrl.EndsWith(".FLV") || item2.ImageUrl.EndsWith(".mpg") || item2.ImageUrl.EndsWith(".MPG"))
+                            {
+                                <video class="cover-bg-img p-relative over-hidden d-flex" muted loop controls autoplay width="100%" height="100%">
+                                    <source src="~/Images/Service/@item2.ImageUrl" type="video/mp4">
+                                </video>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="section-p section-padding p-relative background-section">
+                <div class="intro-text text-center p-relative">
+                    <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.06"
+                         data-dsn-duration="170%" data-dsn-move="0%">
+                        @Model.serviceTitle
+                    </div>
+                    <div class="inner" data-dsn-animate="section">
+                        <h2 class="dsn-text">
+                            @Html.Raw(item.Content)
+                        </h2>
+
+                        <p class="caption-p dsn-up">Mandalina Agency</p>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (item.ThreeImage == true && item.TextIsActive == false)
+        {
+            <div class=" colection-image mt-section has-popup over-hidden p-relative">
+                <div class="p-absolute half-bg-botto h-50 w-100"></div>
+                <div class="container">
+                    <div class="project-image-collage project-collage-three-col over-hidden">
+                        @foreach (var item2 in item.WorkImages)
+                        {
+                            if (item2.ImageUrl.EndsWith(".PNG") || item2.ImageUrl.EndsWith(".JPG") || item2.ImageUrl.EndsWith(".JPEG") || item2.ImageUrl.EndsWith(".GIF") || item2.ImageUrl.EndsWith(".TIFF") || item2.ImageUrl.EndsWith(".jpg") || item2.ImageUrl.EndsWith(".png") || item2.ImageUrl.EndsWith(".jpeg") || item2.ImageUrl.EndsWith(".tiff") || item2.ImageUrl.EndsWith(".gif"))
+                            {
+                                <a href="~/Images/Service/@item2.ImageUrl" class="p-relative over-hidden d-flex">
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                         data-dsn-src="/Images/Service/@item2.ImageUrl"
+                                         data-dsn-srcset="/Images/Service/@item2.ImageUrl 1800w"
+                                         alt="@item.Name" class="cover-bg-img">
+                                </a>
+                            }
+                            else if (item2.ImageUrl.EndsWith(".avi") || item2.ImageUrl.EndsWith(".AVI") || item2.ImageUrl.EndsWith(".mp4") || item2.ImageUrl.EndsWith(".MP4") || item2.ImageUrl.EndsWith(".mov") || item2.ImageUrl.EndsWith(".MOV") || item2.ImageUrl.EndsWith(".flv") || item2.ImageUrl.EndsWith(".FLV") || item2.ImageUrl.EndsWith(".mpg") || item2.ImageUrl.EndsWith(".MPG"))
+                            {
+                                <video class="cover-bg-img p-relative over-hidden d-flex" muted loop controls autoplay width="100%" height="100%">
+                                    <source src="~/Images/Service/@item2.ImageUrl" type="video/mp4">
+                                </video>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<div class="next-project p-relative background-ebec" data-dsn-footer="project">
+    <div class="dsn-container">
+        <div class="row align-items-center">
+            <div class="col col-md-5 col-12 align-self-start">
+                <div class="nav-project-item nav-project-item-prev">
+                    <a href="#" class="effect-ajax d-flex align-items-center p-relative"
+                       data-dsn-ajax="next">
+
+                        <div class="text v-middle w-100 text-center d-flex flex-column">
+                            <span class="btn-nav title-h2 text-uppercase">Key visuals</span>
+                        </div>
+
+                        <span class="img-box" data-overlay="4">
+                            <img src="~/Content/Yeni/assets/img/project/project3/1.jpg" class="cover-bg-img" alt="">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-2 all-work-nav ">
+                <div class="all-work text-center m-auto d-flex align-items-center justify-content-center">
+                    <a href="/portfolyo" class="effect-ajax ">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col col-md-5 col-12 align-self-end">
+                <div class="nav-project-item nav-project-item-next d-flex flex-row-reverse">
+                    <a href="#" class="effect-ajax d-flex align-items-center p-relative"
+                       data-dsn-ajax="next">
+                        <span class="img-box" data-overlay="4">
+                            <img src="~/Content/Yeni/assets/img/project/project3/1.jpg" class="cover-bg-img" alt="">
+                        </span>
+
+                        <div class="text v-middle w-100 text-center d-flex flex-column">
+                            <span class="btn-nav title-h2 text-uppercase">OCTO Sushi</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

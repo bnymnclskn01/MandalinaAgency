@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Mandalina.Entities.WorkImage>
+@{
+    ViewBag.Title = "Yeni Alt İş Resim Listele";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <section class="panel">
+        <header class="panel-heading bg-tertiary">
+            <div class="panel-actions">
+                <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                <a href="#" style="color:white;" class="fa fa-times"></a>
+            </div>
+
+            <h2 class="panel-title" style="color:white;">Alt İş Resim Listele <a href="@Url.Action("Index","WorkPage")" class="btn btn-dark"><i class="fa fa-reply-all"></i> Alt İş Listesine Geri Dön</a> <a href="@Url.Action("Create","WorkDetailImage")" class="btn btn-success">Yeni Resim Ekle</a></h2>
+        </header>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+                <thead>
+                    <tr>
+                        <th>Başlık</th>
+                        <th>Resim & Video</th>
+                        <th>Aktif Durumu</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="gradeX">
+                            <td>@item.Work.Name</td>
+                            @if (item.ImageUrl.EndsWith(".PNG") || item.ImageUrl.EndsWith(".JPG") || item.ImageUrl.EndsWith(".JPEG") || item.ImageUrl.EndsWith(".GIF") || item.ImageUrl.EndsWith(".TIFF") || item.ImageUrl.EndsWith(".jpg") || item.ImageUrl.EndsWith(".png") || item.ImageUrl.EndsWith(".jpeg") || item.ImageUrl.EndsWith(".tiff") || item.ImageUrl.EndsWith(".gif"))
+                            {
+                                <td><img src="~/Images/Service/@item.ImageUrl" width="150" /></td>
+                            }
+                            else if (item.ImageUrl.EndsWith(".avi") || item.ImageUrl.EndsWith(".AVI") || item.ImageUrl.EndsWith(".mp4") || item.ImageUrl.EndsWith(".MP4") || item.ImageUrl.EndsWith(".mov") || item.ImageUrl.EndsWith(".MOV") || item.ImageUrl.EndsWith(".flv") || item.ImageUrl.EndsWith(".FLV") || item.ImageUrl.EndsWith(".mpg") || item.ImageUrl.EndsWith(".MPG"))
+                            {
+                                <td>
+                                    <video width="150" height="150" controls>
+                                        <source src="~/Images/Service/@item.ImageUrl" type="video/mp4">
+                                    </video>
+                                </td>
+                            }
+                            @if (item.IsActiveted == true)
+                            {
+                                <td><i class="fa fa-check"></i> Aktif</td>
+                            }
+                            else
+                            {
+                                <td><i class="fa fa-remove"></i> Pasif</td>
+                            }
+                        <td>
+                            <a href="/Panel/WorkDetailImage/Edit/@item.Id" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                            <a onclick="return confirm('Silmek istediğinize eminmisiniz ?')" class="btn btn-danger" href="/Panel/WorkDetailImage/Delete/@item.Id"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

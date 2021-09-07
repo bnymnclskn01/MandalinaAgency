@@ -1,0 +1,35 @@
+﻿@{
+
+}
+<!-- ========== Loading Page ========== -->
+<div class="preloader">
+    <span class="percent v-middle">0</span>
+    <span class="loading-text text-uppercase">Yükleniyor ...</span>
+    <div class="preloader-bar">
+        <div class="preloader-progress"></div>
+    </div>
+    <h1 class="title v-middle">
+        <span class="letter-stroke"><img src="~/Content/Yeni/Logo/logo-4.png" alt="Mandalina Ajans" /></span>
+        <span class="text-fill"><img src="~/Content/Yeni/Logo/logo-2.png" alt="Mandalina Ajans" /></span>
+    </h1>
+</div>
+<!-- ========== End Loading Page ========== -->
+<!-- ========== Header Normal ========== -->
+<header class="header-normal dsn-header-parallax has-scale v-dark-head h-100-v">
+    @{ Html.RenderAction("PartialSliderList", "Home"); }
+</header>
+<!-- ========== End Header Normal ========== -->
+<div class="wrapper">
+    <section class="work-section work-style-2 section-margin dsn-filter">
+        <div class="container section-title mb-70 align-items-start">
+            @{ Html.RenderAction("PartialConstantValueHomeWorks", "Home"); }
+        </div>
+        <div class="container">
+            <div class="projects-list w-100 ">
+                <div class="d-grid grid-md-2 dsn-isotope" data-dsn-item=".work-item">
+                    @{ Html.RenderAction("PartialServiceList", "Home"); }
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

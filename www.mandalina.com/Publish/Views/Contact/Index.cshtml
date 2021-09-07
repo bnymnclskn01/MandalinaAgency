@@ -1,0 +1,107 @@
+﻿
+@{
+
+}
+<header class="header-normal header-normal-border dsn-header-parallax has-scale">
+    <div class="container h-100">
+        <div class="hero-content align-items-center justify-content-center text-center h-100">
+            <div class="row w-100">
+                <div class="col-lg-12">
+                    <div class="box-left">
+                        @{ Html.RenderAction("PartialContsantValueContactTitle", "Contact"); }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="wrapper">
+    <div id="contact-us" class="contact-form section-padding">
+        <div class="container">
+            <div class="section-title mb-70 align-items-start ">
+                @{ Html.RenderAction("PartialContsantValueContactFormTitle", "Contact"); }
+            </div>
+
+            <div class="form-box d-flex flex-column">
+                <form class="form w-100" method="post" action="/iletisim"
+                      data-toggle="validator">
+                    <div class="messages"></div>
+                    <div class="input__wrap controls row">
+                        <div class="col-md-6 form-group">
+                            <div class="entry-box">
+                                <input id="form_name" type="text" name="Name" maxlength="50" placeholder="Adınız(*)"
+                                       required="required" data-error="Adı alanı boş bırakılamaz">
+                            </div>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <div class="entry-box">
+                                <input id="form_email" type="text" name="Surname" maxlength="50" placeholder="Soyadınız(*)"
+                                       required="required" data-error="Soyadı alanı boş bırakılamaz">
+                            </div>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <div class="entry-box">
+                                <input id="form_email" type="email" maxlength="70" name="Mail" placeholder="E-Mail(*)"
+                                       required="required" data-error="E-Mail alanı boş bırakılamaz">
+                            </div>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <div class="entry-box">
+                                <input id="form_email" type="tel" maxlength="11" name="Phone" placeholder="Telefon(*)"
+                                       required="required" data-error="Telefon alanı boş bırakılamaz">
+                            </div>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <div class="entry-box">
+                                <input id="form_email" type="text" maxlength="70" name="Job" placeholder="Mesleğiniz(*)"
+                                       required="required" data-error="Mesleğiniz alanı boş bırakılamaz">
+                            </div>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <div class="entry-box">
+                                <input id="form_email" type="text" maxlength="70" name="City" placeholder="İliniz(*)"
+                                       required="required" data-error="İliniz alanı boş bırakılamaz">
+                            </div>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <div class="entry-box">
+                                <input id="form_email" type="text" maxlength="70" name="Subject" placeholder="Konu(*)"
+                                       required="required" data-error="Konu alanı boş bırakılamaz">
+                            </div>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="col-md-12 form-group">
+                            <div class="entry-box">
+                                <textarea id="form_message" class="form-control" name="Message"
+                                          placeholder="Mesaj(*)" required="required"
+                                          data-error="Mesaj alanı boş bırakılamaz"></textarea>
+                            </div>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <div class="image-zoom w-auto d-inline-block move-circle inner-btn v-light-head mt-15"
+                                 data-dsn="parallax">
+                                <input type="submit" value="Gönder" class="dsn-btn v-light text-uppercase">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    @{ Html.RenderAction("PartialContactInfromation", "Contact"); }
+</div>

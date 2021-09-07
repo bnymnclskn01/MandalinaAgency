@@ -1,0 +1,53 @@
+﻿@model List<Mandalina.Entities.Work>
+@{
+    ViewBag.Title = "Alt İşleri Listele";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <section class="panel">
+        <header class="panel-heading bg-tertiary">
+            <div class="panel-actions">
+                <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                <a href="#" style="color:white;" class="fa fa-times"></a>
+            </div>
+
+            <h2 class="panel-title" style="color:white;">Alt İşleri Listele <a href="@Url.Action("Index","WorkDetailImage")" class=" btn btn-success"><i class="fa fa-image"></i> Tüm Resimleri Gör</a></h2>
+        </header>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+                <thead>
+                    <tr>
+                        <th>Ana İş</th>
+                        <th>Başlık</th>
+                        <th>Sıra</th>
+                        <th>Aktif Durumu</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr class="gradeX">
+                        <td>@item.Service.serviceTitle</td>
+                        <td>@item.Name</td>
+                        <td>@item.Rank</td>
+                        @if (item.IsActiveted == true)
+                        {
+                            <td><i class="fa fa-check"></i> Aktif</td>
+                        }
+                        else
+                        {
+                            <td><i class="fa fa-remove"></i> Pasif</td>
+                        }
+                    <td>
+                        <a href="/Panel/WorkPage/Edit/@item.Id" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                        <a href="/Panel/WorkPage/List/@item.Id" class="btn btn-success"><i class="fa fa-file-image-o"></i></a>
+                        <a onclick="return confirm('Silmek istediğinize eminmisiniz ?')" class="btn btn-danger" href="/Panel/WorkPage/Delete/@item.Id"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

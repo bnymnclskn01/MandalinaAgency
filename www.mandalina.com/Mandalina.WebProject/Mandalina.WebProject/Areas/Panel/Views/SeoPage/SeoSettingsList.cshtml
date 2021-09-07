@@ -1,0 +1,111 @@
+﻿@model List<Mandalina.Core.ViewModelForPanel.PanelPage.Seo.SeoListForPanel>
+@{
+    ViewBag.Title = "Seo Ayarı Listesi";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.Message != null)
+{
+    <div class="row">
+        <section class="panel">
+            <header class="panel-heading bg-success">
+                <div class="panel-actions">
+                    <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                    <a href="#" style="color:white;" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title" style="color:white;">Ekleme Mesajı</h2>
+            </header>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <p>@ViewBag.Message</p>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="row">
+        <section class="panel">
+            <header class="panel-heading bg-primary">
+                <div class="panel-actions">
+                    <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                    <a href="#" style="color:white;" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title" style="color:white;">Güncelleme Mesajı</h2>
+            </header>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <p>@ViewBag.ErrorMessage</p>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+<div class="row">
+    <section class="panel">
+        <header class="panel-heading bg-tertiary">
+            <div class="panel-actions">
+                <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                <a href="#" style="color:white;" class="fa fa-times"></a>
+            </div>
+
+            <h2 class="panel-title" style="color:white;">
+                Seo Ayarı Listele <a onclick="return confirm('Sitemap oluşturmak istediğinize eminmisiniz ?')" href="/Panel/SeoPage/sitemap/" class="btn btn-info btn-lg"><i class="fa fa-navicon"></i> Sitemap Oluştur </a> | <a href="@Url.Action("SeoAdd","SeoPage")" class="btn btn-success"><i class="fa fa-check"></i> Yeni Seo Ekle</a>
+            </h2>
+        </header>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+                <thead>
+                    <tr>
+                        <th>Dil</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Url</th>
+                        <th>Aktif Durumu</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="gradeX">
+                            <td>@item.LanguageName</td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@item.Slug</td>
+                            @if (item.IsActivated == 1)
+                            {
+                                <td><i class="fa fa-check"></i> Aktif</td>
+                            }
+                            else
+                            {
+                                <td><i class="fa fa-remove"></i> Pasif</td>
+                            }
+                            <td>
+                                <a href="/Panel/SeoPage/UpdateSeoSettings/@item.Id" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                <a href="/Panel/SeoPage/SeoDelete/@item.Id" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+<script>
+        $(function () {
+            $("#sitemap").click(function () {
+
+
+                $.ajax({
+                    url: "/SeoPage/sitemap",
+                    type: "GET",
+
+                })
+                alert("Sitemap oluşturuldu.")
+            });
+        });
+</script>

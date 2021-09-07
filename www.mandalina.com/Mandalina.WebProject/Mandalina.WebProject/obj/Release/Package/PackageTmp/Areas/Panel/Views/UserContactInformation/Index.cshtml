@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Mandalina.Entities.ContactInformation>
+@{
+    ViewBag.Title = "İletişim Bilgileri Listele";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <section class="panel">
+        <header class="panel-heading bg-tertiary">
+            <div class="panel-actions">
+                <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                <a href="#" style="color:white;" class="fa fa-times"></a>
+            </div>
+
+            <h2 class="panel-title" style="color:white;">İletişim Bilgileri Listele</h2>
+        </header>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+                <thead>
+                    <tr>
+                        <th>Adres-1</th>
+                        <th>Adres-2</th>
+                        <th>Telefon-1</th>
+                        <th>Telefon-2</th>
+                        <th>Fax</th>
+                        <th>Mail</th>
+                        <th>Aktif Durumu</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr class="gradeX">
+                        <td>@item.Address</td>
+                        <td>@item.Address2</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.PhoneNumber2</td>
+                        <td>@item.FaxNumber</td>
+                        <td>@item.Mail</td>
+                        @if (item.IsActiveted == true)
+                        {
+                            <td><i class="fa fa-check"></i> Aktif</td>
+                        }
+                        else
+                        {
+                            <td><i class="fa fa-remove"></i> Pasif</td>
+                        }
+                        <td>
+                            <a href="/Panel/UserContactInformation/Edit/@item.Id" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                            <a onclick="return confirm('Silmek istediğinize eminmisiniz ?')" class="btn btn-danger" href="/Panel/UserContactInformation/Delete/@item.Id"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

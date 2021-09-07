@@ -1,0 +1,150 @@
+﻿@model Mandalina.Core.ViewModelForPanel.PanelPage.Seo.SeoUpdateForPanel
+@{
+    ViewBag.Title = "Seo Ayarı Güncelle";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="row">
+        <section class="panel">
+            <header class="panel-heading bg-danger">
+                <div class="panel-actions">
+                    <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                    <a href="#" style="color:white;" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title" style="color:white;">Hata Mesajı</h2>
+            </header>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <p>@ViewBag.ErrorMessage</p>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+@if (ViewBag.Message != null)
+{
+    <div class="row">
+        <section class="panel">
+            <header class="panel-heading bg-danger">
+                <div class="panel-actions">
+                    <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                    <a href="#" style="color:white;" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title" style="color:white;">Bilgilendirme Mesajı</h2>
+            </header>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <p>@ViewBag.Message</p>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <div class="panel-actions">
+                    <a href="#" class="fa fa-caret-down"></a>
+                    <a href="#" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title">Seo Ayarı Güncelle</h2>
+            </header>
+            <div class="panel-body">
+                <form class="form-horizontal form-bordered" action="/Panel/SeoPage/UpdateSeoSettings" method="post" enctype="multipart/form-data">
+                    <input type="hidden" value="@Model.Id" name="Id" />
+                    <div class="form-group">
+                        <label class="col-md-2">Dil Seçiniz</label>
+                        <div class="col-md-10">
+                            <select class="form-control mb-md" required name="LanguageId">
+                                @if (Model.LanguageList != null)
+                                {
+                                    foreach (var lang in Model.LanguageList)
+                                    {
+                                        if (lang.Id == Model.LanguageId)
+                                        {
+                                            <option selected value="@lang.Id">@lang.LangName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@lang.Id">@lang.LangName</option>
+                                        }
+
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Sayfa Adı</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" value="@Model.PageName" name="PageName" maxlength="199" placeholder="Sayfa Adı Giriniz..." required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Sayfa Kategorisi</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" value="@Model.PageCategory" name="PageCategory" maxlength="199" required placeholder="Sayfa Kategorisi Giriniz ..." />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Sayfa Açıklaması</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" value="@Model.Description" name="Description" maxlength="199" required placeholder="Sayfa Açıklaması Giriniz ..." />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Sayfa Başlık</label>
+                        <div class="col-md-10">
+                            <input type="text" name="Title" value="@Model.Title" required maxlength="119" class="form-control" placeholder="Lütfen Başlık Giriniz..." />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Anahtar Kelimeler</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" value="@Model.Keywords" name="Keywords" maxlength="200" placeholder="Anahtar Kelime Giriniz..." />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Sayfa Url</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="Url" value="@Model.Url" maxlength="199" placeholder="Sayfa Url Giriniz..." />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Aktif | Pasif</label>
+                        <div class="col-md-10">
+                            <select class="form-control mb-md" required name="IsActivated">
+                                @if (Model.IsActivated == 1)
+                                {
+                                    <option selected value="1">Aktif</option>
+                                    <option value="0">Pasif</option>
+                                }
+                                else
+                                {
+                                    <option value="1">Aktif</option>
+                                    <option selected value="0">Pasif</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-pencil"></i> Yeni Seo Ayarı Güncelle</button>
+                            <a href="@Url.Action("SeoSettingsList","SeoPage")" class="btn btn-dark"><i class="fa fa-reply-all"></i> Listeye Geri Dön</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Mandalina.Entities.SliderImage>
+
+@{
+    ViewBag.Title = "Slider Resimleri Listele";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <section class="panel">
+        <header class="panel-heading bg-tertiary">
+            <div class="panel-actions">
+                <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                <a href="#" style="color:white;" class="fa fa-times"></a>
+            </div>
+
+            <h2 class="panel-title" style="color:white;">Slider Resimleri Listele <a href="@Url.Action("Create","SliderImage")" class="btn btn-success"><i class="fa fa-check"></i> Yeni Slider Resim Ekle</a></h2>
+        </header>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped mb-none" id="datatable-tabletools" data-swf-path="assets/vendor/jquery-datatables/extras/TableTools/swf/copy_csv_xls_pdf.swf">
+                <thead>
+                    <tr>
+                        <th>Main Slider</th>
+                        <th>Slider Başlığı</th>
+                        <th>Slider Resim</th>
+                        <th>Aktif Durumu</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="gradeX">
+                            <td>@item.Slider.Title</td>
+                            <td>@item.Name</td>
+                            <td><img src="@item.ImageUrl" alt="@item.Name" width="150" /></td>
+                            @if (item.IsActivited == true)
+                            {
+                                <td><i class="fa fa-check"></i> Aktif</td>
+                            }
+                            else
+                            {
+                                <td><i class="fa fa-remove"></i> Pasif</td>
+                            }
+                            <td>
+                                <a href="/Panel/SliderImage/Edit/@item.Id" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                <a onclick="return confirm('Silmek istediğinize eminmisiniz ?')" href="/Panel/SliderImage/Delete/@item.Id" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,129 @@
+﻿@model Mandalina.Core.ViewModelForPanel.PanelPage.SliderPage.UpdateSliderPageVM
+@{
+    ViewBag.Title = "Main Slider Güncelle";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="row">
+        <section class="panel">
+            <header class="panel-heading bg-danger">
+                <div class="panel-actions">
+                    <a href="#" style="color:white;" class="fa fa-caret-down"></a>
+                    <a href="#" style="color:white;" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title" style="color:white;">Hata Mesajı</h2>
+            </header>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <p>@ViewBag.ErrorMessage</p>
+                </div>
+            </div>
+        </section>
+    </div>
+}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <div class="panel-actions">
+                    <a href="#" class="fa fa-caret-down"></a>
+                    <a href="#" class="fa fa-times"></a>
+                </div>
+
+                <h2 class="panel-title">Main Slider Ekle <a href="/Panel/SliderImage/Index" class="btn btn-success"><i class="fa fa-list"></i> Slider Resimleri</a></h2>
+            </header>
+            <div class="panel-body">
+                <form class="form-horizontal form-bordered" action="/Panel/SliderPage/UpdateSliderPage" method="post" enctype="multipart/form-data">
+                    <input type="hidden" value="@Model.Id" name="Id" />
+                    <div class="form-group">
+                        <label class="col-md-2">Dil Seçiniz</label>
+                        <div class="col-md-10">
+                            <select class="form-control mb-md" required name="LanguageId">
+                                <option value="">Lütfen Seçiniz</option>
+                                @if (Model.LanguageList != null)
+                                {
+                                    foreach (var lang in Model.LanguageList)
+                                    {
+                                        if (lang.Id == Model.LanguageId)
+                                        {
+                                            <option selected value="@lang.Id">@lang.LangName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@lang.Id">@lang.LangName</option>
+                                        }
+
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2">Slider Başlık</label>
+                        <div class="col-md-10">
+                            <input type="text" name="Title" class="form-control" value="@if (Model.Title != null) {@Model.Title }" placeholder="Lütfen Başlık Giriniz...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2">Slider Slogan</label>
+                        <div class="col-md-10">
+                            <input type="text" name="Slogans" value="@if (Model.Slogans != null) {@Model.Slogans}" class="form-control" placeholder="Lütfen Slogan Giriniz...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2">Slider İçerik</label>
+                        <div class="col-md-10">
+                            <textarea class="ckeditor" name="Content" required>@if (Model.Content != null) {@Model.Content }</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2">Slider Sıra</label>
+                        <div class="col-md-10">
+                            <input type="number" name="Rank" value="@Model.Rank" class="form-control" placeholder="Lütfen Sıra Giriniz...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2">Aktif Pasif</label>
+                        <div class="col-md-10">
+                            <select class="form-control mb-md" required name="IsActiveted">
+                                @if (Model.IsActiveted == 1)
+                                {
+                                    <option selected value="1">Aktif</option>
+                                    <option value="0">Pasif</option>
+                                }
+                                else
+                                {
+                                    <option value="1">Aktif</option>
+                                    <option selected value="0">Pasif</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2">Slider Resim</label>
+                        <div class="col-md-10">
+                            <img src="@Model.ImageUrl" width="250" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2">Slider Resim</label>
+                        <div class="col-md-10">
+                            <input type="file" name="fileUpload" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2">İşlem Butonu</label>
+                        <div class="col-md-10">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-pencil"></i> Slider Güncelle</button>
+                            <a href="@Url.Action("Index","SliderPage")" class="btn btn-dark"><i class="fa fa-reply-all"> Listeye Geri Dön</i></a>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </div>
+</div>
