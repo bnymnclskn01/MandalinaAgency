@@ -15,6 +15,7 @@ namespace Mandalina.Entities
         public Categories()
         {
             this.Service = new HashSet<Service>();
+            this.ServiceCategories = new HashSet<ServiceCategory>();
         }
 
         [StringLength(110)]
@@ -40,5 +41,7 @@ namespace Mandalina.Entities
         public virtual Languages Language { get; set; }
 
         public virtual ICollection<Service> Service { get; set; }
+
+        public virtual ICollection<ServiceCategory> ServiceCategories { get; set; }
     }
 }

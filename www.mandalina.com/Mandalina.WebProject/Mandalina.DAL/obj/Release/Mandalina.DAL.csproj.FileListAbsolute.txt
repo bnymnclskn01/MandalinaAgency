@@ -63,3 +63,34 @@ C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.co
 C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\obj\Release\Mandalina.DAL.csproj.CopyComplete
 C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\obj\Release\Mandalina.DAL.dll
 C:\Users\PC\Desktop\SSD BACKUP\Masaüstü\Tüm Dosyalar\DESKTOP\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\obj\Release\Mandalina.DAL.pdb
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Mandalina.DAL.dll.config
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Mandalina.DAL.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Mandalina.DAL.pdb
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Elasticsearch.Net.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\EntityFramework.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Mandalina.Core.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Mandalina.Entities.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Buffers.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Diagnostics.DiagnosticSource.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Memory.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Numerics.Vectors.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Mandalina.Core.pdb
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Mandalina.Core.dll.config
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Mandalina.Entities.pdb
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Mandalina.Entities.dll.config
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Elasticsearch.Net.pdb
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\Elasticsearch.Net.xml
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\EntityFramework.xml
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Buffers.xml
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Diagnostics.DiagnosticSource.xml
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Memory.xml
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Numerics.Vectors.xml
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\obj\Release\Mandalina.DAL.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\obj\Release\Mandalina.DAL.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\obj\Release\Mandalina.DAL.dll
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\obj\Release\Mandalina.DAL.pdb
+C:\Users\PC\Documents\GitHub\MandalinaAgency\www.mandalina.com\Mandalina.WebProject\Mandalina.DAL\obj\Release\Mandalina.DAL.csproj.CopyComplete

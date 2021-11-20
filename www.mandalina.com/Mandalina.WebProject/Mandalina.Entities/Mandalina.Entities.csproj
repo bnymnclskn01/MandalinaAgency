@@ -66,6 +66,7 @@
     <Compile Include="SendAndOffer.cs" />
     <Compile Include="SeoSettings.cs" />
     <Compile Include="Service.cs" />
+    <Compile Include="ServiceCategory.cs" />
     <Compile Include="Sliders.cs" />
     <Compile Include="SliderImage.cs" />
     <Compile Include="SocialMedias.cs" />

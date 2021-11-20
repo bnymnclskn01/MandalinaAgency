@@ -14,6 +14,8 @@ namespace Mandalina.Entities
         public Service()
         {
             this.Work = new HashSet<Work>();
+
+            this.ServiceCategories = new HashSet<ServiceCategory>();
         }
 
         [StringLength(110)]
@@ -44,5 +46,7 @@ namespace Mandalina.Entities
         public virtual Categories Category { get; set; }
 
         public virtual ICollection<Work> Work { get; set; }
+
+        public virtual ICollection<ServiceCategory> ServiceCategories { get; set; }
     }
 }
